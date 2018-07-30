@@ -174,8 +174,8 @@ def _evaluate_require(ast, file_path, package_lua, lua_path=None):
         require_path_str = require_path.decode(encoding='utf-8')
 
         # Disallow chars that select files outside of the load path.
-        if b'./' in require_path or require_path.startswith(b'/'):
-            raise LuaBuildError('require() filename cannot contain "./" or "../" or start with "/"', require_token)
+        # if b'./' in require_path or require_path.startswith(b'/'):
+        #     raise LuaBuildError('require() filename cannot contain "./" or "../" or start with "/"', require_token)
 
         if require_path not in package_lua:
             reqd_filepath = _locate_require_file(require_path_str, file_path, lua_path=lua_path)
